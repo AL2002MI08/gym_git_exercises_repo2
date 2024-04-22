@@ -71,7 +71,7 @@ To https://github.com/AL2002MI08/gym_git_exercises.git
 ```
 
 ## exercise 2
-```
+```bash
 PS C:\Users\alexa\Desktop\git_exercise> git add .
 PS C:\Users\alexa\Desktop\git_exercise> git status
         new file:   home.html
@@ -149,3 +149,58 @@ PS C:\Users\alexa\Desktop\git_exercise> git reset --hard
 HEAD is now at 4f24dd1 added about and home page
 PS C:\Users\alexa\Desktop\git_exercise>
 ```
+# bundle 4
+## exercise 1
+```bash
+PS C:\Users\alexa\Desktop\git_exercise> git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+        README.md
+Please commit your changes or stash them before you switch branches.
+Aborting
+PS C:\Users\alexa\Desktop\git_exercise> git add .
+PS C:\Users\alexa\Desktop\git_exercise> git commit -m "new changes to readme"
+[ft/home-page-redesign 28ab819] new changes to readme
+ 1 file changed, 77 insertions(+)
+PS C:\Users\alexa\Desktop\git_exercise> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\alexa\Desktop\git_exercise> git remote add git-copy https://github.com/AL2002MI08/gym_git_exercises_repo2.git
+PS C:\Users\alexa\Desktop\git_exercise> git remote      
+git-copy
+origin
+PS C:\Users\alexa\Desktop\git_exercise> git commit -m "create new repo gitcopy"                                          
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   home.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\alexa\Desktop\git_exercise> git add .
+PS C:\Users\alexa\Desktop\git_exercise> git commit -m "create new repo gitcopy"
+[main 7c13787] create new repo gitcopy
+ 1 file changed, 1 insertion(+)
+PS C:\Users\alexa\Desktop\git_exercise> git push git-copy
+Enumerating objects: 29, done.
+Counting objects: 100% (29/29), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (24/24), done.
+Writing objects: 100% (29/29), 5.24 KiB | 1.31 MiB/s, done.
+Total 29 (delta 8), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (8/8), done.
+To https://github.com/AL2002MI08/gym_git_exercises_repo2.git
+ * [new branch]      main -> main
+PS C:\Users\alexa\Desktop\git_exercise> git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 331 bytes | 331.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/AL2002MI08/gym_git_exercises.git
+   42b575d..7c13787  main -> main
+```
+
