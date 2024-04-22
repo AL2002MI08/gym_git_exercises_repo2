@@ -68,5 +68,4 @@ fatal: --delete doesn't make sense without any refs
 PS C:\Users\alexa\Desktop\git_exercise> git push origin --delete test
 To https://github.com/AL2002MI08/gym_git_exercises.git
  - [deleted]         test
-
 ```
