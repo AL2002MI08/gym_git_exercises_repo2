@@ -69,3 +69,83 @@ PS C:\Users\alexa\Desktop\git_exercise> git push origin --delete test
 To https://github.com/AL2002MI08/gym_git_exercises.git
  - [deleted]         test
 ```
+
+## exercise 2
+```
+PS C:\Users\alexa\Desktop\git_exercise> git add .
+PS C:\Users\alexa\Desktop\git_exercise> git status
+        new file:   home.html
+PS C:\Users\alexa\Desktop\git_exercise> git add .
+PS C:\Users\alexa\Desktop\git_exercise> git status
+        new file:   home.html
+        new file:   about.html
+PS C:\Users\alexa\Desktop\git_exercise> git stash 
+Saved working directory and index state WIP on dev: 87a45e2 exercise 1 solution
+PS C:\Users\alexa\Desktop\git_exercise> git add --all
+PS C:\Users\alexa\Desktop\git_exercise> git stash
+Saved working directory and index state WIP on dev: 87a45e2 exercise 1 solution
+PS C:\Users\alexa\Desktop\git_exercise> git add --all
+PS C:\Users\alexa\Desktop\git_exercise> git stash
+Saved working directory and index state WIP on dev: 87a45e2 exercise 1 solution
+PS C:\Users\alexa\Desktop\git_exercise> git stash list
+stash@{0}: WIP on dev: 87a45e2 exercise 1 solution
+stash@{1}: WIP on dev: 87a45e2 exercise 1 solution
+stash@{2}: WIP on dev: 87a45e2 exercise 1 solution
+PS C:\Users\alexa\Desktop\git_exercise> git stash pop 'stash@{1}'
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+
+Dropped stash@{1} (2a5e47fb501dbff057b515b48fdc3d517c51d5d8)
+PS C:\Users\alexa\Desktop\git_exercise> git stash show stash@{1}
+Too many revisions specified: 'stash@' 'MQA=' 'xml' 'text'
+PS C:\Users\alexa\Desktop\git_exercise> git stash list
+stash@{0}: WIP on dev: 87a45e2 exercise 1 solution
+stash@{1}: WIP on dev: 87a45e2 exercise 1 solution
+PS C:\Users\alexa\Desktop\git_exercise> git stash pop 'stash@{1}'
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+
+Dropped stash@{1} (40bb9fe6e6649ffe54036255d6d264baf7f70ab6)
+PS C:\Users\alexa\Desktop\git_exercise> git commit -m "added about and home page"
+[dev 4f24dd1] added about and home page
+ 2 files changed, 24 insertions(+)
+ create mode 100644 about.html
+ create mode 100644 home.html
+PS C:\Users\alexa\Desktop\git_exercise> git push
+fatal: The current branch dev has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin dev
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+PS C:\Users\alexa\Desktop\git_exercise> git push --set-upstream origin dev
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (10/10), 2.03 KiB | 691.00 KiB/s, done.
+Total 10 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/AL2002MI08/gym_git_exercises.git
+   c6c7a32..4f24dd1  dev -> dev
+branch 'dev' set up to track 'origin/dev'.
+PS C:\Users\alexa\Desktop\git_exercise> git stash pop 'stash@{0}'
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   team.html
+
+Dropped stash@{0} (6b4cc76f521bfe32f9d2752792cead647e131cc8)
+PS C:\Users\alexa\Desktop\git_exercise> git reset --hard
+HEAD is now at 4f24dd1 added about and home page
+PS C:\Users\alexa\Desktop\git_exercise>
+```
